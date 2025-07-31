@@ -202,10 +202,8 @@ astraeus/
 
 ## 📞 联系方式
 
-- 项目主页: [GitHub Repository](https://github.com/your-username/astraeus)
-- 问题反馈: [Issues](https://github.com/your-username/astraeus/issues)
-- 功能建议: [Discussions](https://github.com/your-username/astraeus/discussions)
-
----
+- 项目主页: [GitHub Repository](https://github.com/hog-sys/astraeus)
+- 问题反馈: [Issues](https://github.com/hog-sys/astraeus/issues)
+- 功能建议: [Discussions](https://github.com/hog-sys/astraeus/discussions)
 
 **免责声明**: 本软件仅供教育和研究目的。使用本软件进行实际交易的风险由用户自行承担。开发者不对任何投资损失承担责任。 
