@@ -33,24 +33,28 @@ Astraeus 是一个尖端、自主的智能交易与投资管理系统，专为�
 
 ### 环境要求
 
-- Python 3.8+
-- SQLite 3.x (或 PostgreSQL)
-- 稳定的网络连接
+- **Python**: 3.8+ (推荐3.9+)
+- **内存**: 4GB RAM以上
+- **存储**: 10GB可用空间
+- **网络**: 稳定的互联网连接
 
 ### 安装步骤
 
 1. **克隆项目**
 ```bash
-git clone https://github.com/your-username/astraeus.git
-cd astraeus
+git clone <repository-url>
+cd Astraeus
 ```
 
 2. **创建虚拟环境**
 ```bash
 python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# 或
-venv\Scripts\activate  # Windows
+
+# 激活虚拟环境
+# Windows:
+venv\Scripts\activate
+# macOS/Linux:
+source venv/bin/activate
 ```
 
 3. **安装依赖**
@@ -60,14 +64,60 @@ pip install -r requirements.txt
 
 4. **配置环境变量**
 ```bash
+# Windows
+copy env_example.txt .env
+# macOS/Linux
 cp env_example.txt .env
-# 编辑 .env 文件，填入您的API密钥和配置
+
+# 编辑 .env 文件，配置API密钥
 ```
 
-5. **运行系统**
+5. **启动系统**
 ```bash
 python main.py
 ```
+
+### 系统工具
+
+#### 快速测试
+运行快速测试脚本验证系统是否正常：
+
+```bash
+python test_quick.py
+```
+
+#### 状态检查
+查看系统当前状态：
+
+```bash
+python status.py
+```
+
+#### 启动脚本
+使用便捷的启动脚本：
+
+```bash
+# Windows
+launch.bat
+
+# Linux/macOS
+./launch.sh
+```
+
+#### 系统监控
+实时监控系统运行状态：
+
+```bash
+python monitor.py
+```
+
+### 详细部署指南
+
+请参考 [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md) 获取完整的部署说明，包括：
+- API密钥获取指南
+- 系统配置详解
+- 故障排除方法
+- 安全建议
 
 ## ⚙️ 配置说明
 
@@ -77,7 +127,7 @@ python main.py
 ```env
 BINANCE_API_KEY=your_binance_api_key_here
 BINANCE_SECRET_KEY=your_binance_secret_key_here
-BINANCE_TESTNET=false  # 建议先使用测试网
+BINANCE_TESTNET=true  # 建议先使用测试网
 ```
 
 #### Telegram Bot
@@ -90,6 +140,8 @@ TELEGRAM_CHAT_ID=your_telegram_chat_id_here
 
 #### 数据源API
 ```env
+CUCOIN_API=your_cucoin_api_key_here
+COINGECKO_API_KEY=your_coingecko_api_key_here
 POLYGON_API_KEY=your_polygon_api_key_here
 ALPHA_VANTAGE_API_KEY=your_alpha_vantage_api_key_here
 GLASSNODE_API_KEY=your_glassnode_api_key_here
@@ -97,10 +149,18 @@ GLASSNODE_API_KEY=your_glassnode_api_key_here
 
 #### 交易参数
 ```env
-MAX_DAILY_DEPLOYMENT_USDC=1000  # 单日最大部署资金
-MAX_CONCURRENT_POSITIONS=5       # 最大并发持仓数量
-DEFAULT_STOP_LOSS_PERCENT=2.0    # 默认止损百分比
-DEFAULT_TAKE_PROFIT_PERCENT=6.0  # 默认止盈百分比
+MAX_DAILY_DEPLOYMENT_USDC=10          # 单日最大部署资金
+MAX_CONCURRENT_POSITIONS=3             # 最大并发持仓数
+DEFAULT_STOP_LOSS_PERCENT=2.0          # 默认止损百分比
+DEFAULT_TAKE_PROFIT_PERCENT=6.0        # 默认止盈百分比
+RISK_PER_TRADE_PERCENT=1.0             # 每笔交易风险百分比
+```
+
+#### 分析权重
+```env
+TECHNICAL_ANALYSIS_WEIGHT=0.4          # 技术分析权重
+FUNDAMENTAL_ANALYSIS_WEIGHT=0.4        # 基本面分析权重
+SENTIMENT_ANALYSIS_WEIGHT=0.2          # 情绪分析权重
 ```
 
 ## 📱 Telegram 命令
@@ -205,5 +265,7 @@ astraeus/
 - 项目主页: [GitHub Repository](https://github.com/hog-sys/astraeus)
 - 问题反馈: [Issues](https://github.com/hog-sys/astraeus/issues)
 - 功能建议: [Discussions](https://github.com/hog-sys/astraeus/discussions)
+
+---
 
 **免责声明**: 本软件仅供教育和研究目的。使用本软件进行实际交易的风险由用户自行承担。开发者不对任何投资损失承担责任。 
