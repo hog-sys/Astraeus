@@ -1,0 +1,47 @@
+# Astraeus - 加密货币智能交易系统依赖
+# 核心框架
+asyncio==3.4.3
+aiohttp==3.9.1
+python-dotenv==1.0.0
+
+# 数据库
+sqlite3
+sqlalchemy==2.0.23
+alembic==1.13.1
+
+# 数据处理与分析
+pandas==2.1.4
+numpy==1.24.3
+scipy==1.11.4
+ta==0.10.2  # 技术分析库
+
+# 交易所API
+python-binance==1.0.19
+ccxt==4.1.77
+
+# 数据源API
+requests==2.31.0
+websockets==12.0
+
+# 任务调度
+apscheduler==3.10.4
+
+# 通知服务
+python-telegram-bot==20.7
+
+# 日志与监控
+loguru==0.7.2
+prometheus-client==0.19.0
+
+# 配置管理
+pydantic==2.5.2
+pydantic-settings==2.1.0
+
+# 测试
+pytest==7.4.3
+pytest-asyncio==0.21.1
+
+# 开发工具
+black==23.11.0
+flake8==6.1.0
+mypy==1.7.1 
